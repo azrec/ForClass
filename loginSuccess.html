@@ -1,8 +1,51 @@
 <!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問題</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        pre {
+            background-color: #f4f4f4; /* 背景颜色 */
+            padding: 10px; /* 内边距 */
+            border: 1px solid #ccc; /* 边框 */
+            overflow-x: auto; /* 超出部分可滚动 */
+        }
+        code {
+            font-family: "Courier New", monospace; /* 使用等宽字体 */
+        }
+    </style>
 </head>
 <body>
-    <h1>Login Success!</h1>
+
+<h1>JavaScript 冒泡和捕獲的差異</h1>
+
+<pre><code>
+&lt;div id="parent"&gt;
+    &lt;button id="child"&gt;Click me!&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    // 在父元素上添加事件監聽（捕獲）
+    document.getElementById("parent").addEventListener("click", function() {
+        alert("Parent clicked! (capturing)");
+    }, true); // 設置為捕獲模式
+
+    // 在子元素上添加事件監聽（冒泡）
+    document.getElementById("child").addEventListener("click", function() {
+        alert("Child clicked!");
+    });
+&lt;/script&gt;
+</code></pre>
+<br>
+<h1>Git衝突</h1>
+<p>
+    Git的衝突指的是多個人同時更改同一檔案的同一部分，使得Git無法確定哪個更改才是正確的，
+    所以Git會在檔案內註記哪邊發生衝突了，方便開發者決定該如何修改。
+</p>
+
 </body>
 </html>

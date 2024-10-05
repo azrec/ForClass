@@ -26,6 +26,12 @@
         h2 {
             margin-bottom: 20px;
             color: #4facfe;
+            white-space: nowrap; /* 防止換行 */
+        }
+        marquee {
+            font-size: 24px;
+            color: #4facfe;
+            margin-bottom: 10px;
         }
         input {
             margin: 10px 0;
@@ -75,7 +81,7 @@
 <body>
 
 <div class="login-container">
-    <h2>登入系統</h2>
+    <marquee>登入系統</marquee>
     <form id="loginForm" onsubmit="return validateForm()">
         <input type="text" id="username" placeholder="帳號" required>
         <input type="password" id="password" placeholder="密碼" required>
