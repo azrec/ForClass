@@ -46,7 +46,6 @@
                 return false; // Captcha 錯誤，阻止表單提交
             }
         }
-
         // 頁面加載時生成驗證碼
         window.onload = function() {
             generateCaptcha();
@@ -69,6 +68,9 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative; /* 使容器成为相对定位 */
+            overflow: hidden; /* 隐藏超出容器的内容 */
+            width: 250px; /* 设置容器宽度 */
         }
         label, input{
             margin: 10px 0;
@@ -91,11 +93,28 @@
             font-size: 20px;
             letter-spacing: 3px;
         }
+        /* 跑马灯效果 */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .marquee {
+            position: absolute; /* 绝对定位使其脱离文档流 */
+            top: 10px; /* 根据需要调整位置 */
+            left: 0;
+            width: 100%; /* 设定为100%以适应容器 */
+            animation: marquee 5s linear infinite; /* 动画持续5秒，线性过渡，无限循环 */
+            font-size: 24px; /* 字体大小 */
+            font-weight: bold; /* 字体加粗 */
+            white-space: nowrap; /* 保证文字不换行 */
+        }
+
     </style>
 </head>
 <body>
     <div class="form_container">
-        <h1>Login</h1>
+        <div class="marquee">Login</div><br>
         <form onsubmit="return validateCaptcha()">
             <label for="Account">Account:</label>
             <input type="text" id="Account" value=""><br>
